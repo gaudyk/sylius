@@ -1,0 +1,6 @@
+sylius.form.product.color: 'Choose product color'
+sylius.form.product.color.black: 'Black'
+sylius.form.product.color.blue: 'Blue'
+sylius.form.product.color.red: 'Red'
+sylius.form.product.choosePlaceholder: '-- choose --'
+sylius.product.show.color: 'Kolor'

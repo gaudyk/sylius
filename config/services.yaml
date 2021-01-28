@@ -26,10 +26,23 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/*'
-        exclude: '../src/{Entity,Migrations,Tests,Kernel.php}'
+        exclude: '../src/{Entity,Migrations,Tests,Form,Kernel.php}'
 
     # Controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+
+    ## TWIG EVENT - DOESN'T WORK ##
+
+    app.block_event_listener.homepage.layout.after_description:
+        class: Sylius\Bundle\UiBundle\Block\BlockEventListener
+        arguments:
+            - 'block.html.twig'
+        tags:
+            - { name: kernel.event_listener, event: sylius.shop.product.show.after_description, method: onBlockEvent }
+
+imports:
+    - { resource: 'form.xml' }

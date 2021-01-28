@@ -1,0 +1,6 @@
+<div class="ui basic segment">
+    <p>{{ product.shortDescription }}</p>
+    {% if product.color %}
+        <strong>{{ 'sylius.product.show.color'|trans }}</strong>: {{ product.color|trans }}
+    {% endif %}
+</div>

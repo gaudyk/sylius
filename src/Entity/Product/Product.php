@@ -14,6 +14,25 @@ use Sylius\Component\Product\Model\ProductTranslationInterface;
  */
 class Product extends BaseProduct
 {
+    /**
+     * @return mixed
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param mixed $color
+     */
+    public function setColor($color): void
+    {
+        $this->color = $color;
+    }
+
+    /** @ORM\Column(type="string", nullable=true) */
+    private $color;
+
     protected function createTranslation(): ProductTranslationInterface
     {
         return new ProductTranslation();

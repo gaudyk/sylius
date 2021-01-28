@@ -1,0 +1,5 @@
+sylius_ui:
+  events:
+    sylius.shop.product.show.after_description:
+      blocks:
+        my_block_name: 'block.html.twig'
